@@ -1,9 +1,14 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
-public class Rotation : MonoBehaviour
+public class Rotation3D : MonoBehaviour
 {
+    public int x=3;
+    public int y=3;
+    public int z=1;
+    public int scale=50;
+
 	void Update () {
-		transform.Rotate(new Vector3(3,2,1) * 50 * Time.deltaTime);
+		transform.Rotate(new Vector3(x,y,z) * scale * Time.deltaTime);
 	}
 }
