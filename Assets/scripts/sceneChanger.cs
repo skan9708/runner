@@ -9,9 +9,9 @@ public class sceneChanger: MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 
@@ -27,6 +27,6 @@ public class sceneChanger: MonoBehaviour {
 
     public void ToScene(string sceneName)
     {
-        AsyncOperation async = SceneManager.LoadSceneAsync(sceneName);
+        SceneManager.LoadSceneAsync(sceneName);
     }
 }
