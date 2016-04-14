@@ -25,9 +25,8 @@ public class CoinSpawner : MonoBehaviour
         Vector2 spawnPosition = transform.position;
         coin.transform.position = spawnPosition;
         // 속도
-        Rigidbody2D rb = coin.GetComponent<Rigidbody2D>();
-        Vector2 v = rb.velocity;
-        v.x -= 10;
-        rb.velocity = v;
+        coin.GetComponent<Move2D>().x = -10f;
+        // 회전
+        coin.GetComponent<Rotation2D>().y = 150;
     }
 }
