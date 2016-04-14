@@ -12,12 +12,16 @@ public class Player : MonoBehaviour {
         {
 		    grounded = true;
         }
-        else if (collidingObject.gameObject.tag == "Coin")
+	}
+
+    void OnTriggerEnter2D (Collider2D collidingObject)
+    {
+        if (collidingObject.gameObject.tag == "Coin")
         {
             Destroy(collidingObject.gameObject);
             GameObject.Find("Score").GetComponent<Score>().AddScore(1);
         }
-	}
+    }
 
 	void OnCollisionExit2D (Collision2D collidingObject)
 	{
@@ -29,7 +33,7 @@ public class Player : MonoBehaviour {
 
     void FixedUpdate()
     {
-        if (grounded && Input.GetKeyDown(KeyCode.Space))
+        if (grounded && (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.Space)))
         {
             GetComponent<Rigidbody2D>().AddForce(Vector2.up * jumpspeed, ForceMode2D.Impulse);
         }
