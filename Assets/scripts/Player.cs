@@ -8,12 +8,22 @@ public class Player : MonoBehaviour {
 
     void OnCollisionEnter2D (Collision2D collidingObject)
 	{
-		grounded = true;
+        if (collidingObject.gameObject.tag == "Ground")
+        {
+		    grounded = true;
+        }
+        else if (collidingObject.gameObject.tag == "Coin")
+        {
+            Destroy(collidingObject.gameObject);
+        }
 	}
 
 	void OnCollisionExit2D (Collision2D collidingObject)
 	{
-    	grounded=false;
+        if (collidingObject.gameObject.tag == "Ground")
+    	{
+            grounded=false;
+        }
 	}
 
     void FixedUpdate()
