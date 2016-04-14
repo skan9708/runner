@@ -15,6 +15,7 @@ public class Player : MonoBehaviour {
         else if (collidingObject.gameObject.tag == "Coin")
         {
             Destroy(collidingObject.gameObject);
+            GameObject.Find("Score").GetComponent<Score>().AddScore(1);
         }
 	}
 
