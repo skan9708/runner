@@ -26,6 +26,8 @@ public class Parallax : MonoBehaviour
                                                      transform.position.y,
                                                      transform.position.z),
                                          transform.rotation);
+        // 복사본도 같은 그룹(parent)에 속하도록 설정
+        _clone.transform.parent = transform.parent;
         // 복사본을 만들때 스크립트 중복 실행을 막기 위해 뒤쪽 객체의 스크립트를 없앤다.
         // 즉, 이 스크립트에서 두 객체를 컨트롤한다.
 		Parallax parallaxComponent = _clone.GetComponent<Parallax>();
