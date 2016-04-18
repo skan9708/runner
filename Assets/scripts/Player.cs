@@ -19,7 +19,18 @@ public class Player : MonoBehaviour {
         if (collidingObject.gameObject.tag == "Coin")
         {
             Destroy(collidingObject.gameObject);
-            GameObject.Find("Score").GetComponent<Score>().AddScore(1);
+            GameObject.Find("Score").GetComponent<Score>().Add(1);
+        }
+
+        if (collidingObject.gameObject.tag == "Hurdle")
+        {
+            Heart heart = GameObject.Find("Heart").GetComponent<Heart>();
+            heart.Add(-1);
+
+            if (heart.count <= 0)
+            {
+                GetComponent<SceneChanger>().ToScene("main");
+            }
         }
     }
 
