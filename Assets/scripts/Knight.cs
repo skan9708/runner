@@ -65,7 +65,7 @@ public class Knight : MonoBehaviour {
         // animation
         if (grounded && (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)))
         {
-            anim.Play("knight_walk");
+            anim.Play("knight_run");
         }
         if (grounded && (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow)))
         {
